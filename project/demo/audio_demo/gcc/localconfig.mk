@@ -12,7 +12,7 @@ export __CONFIG_XPLAYER := y
 export __CONFIG_XIP := y
 
 # enable/disable PSRAM, default to n
-export __CONFIG_PSRAM := n
+# export __CONFIG_PSRAM := n
 
 # enable/disable OTA, default to n
-export __CONFIG_OTA := y
+export __CONFIG_OTA := n

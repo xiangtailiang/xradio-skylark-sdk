@@ -99,13 +99,12 @@ static const GPIO_PinMuxParam g_pinmux_i2c1[] = {
 
 __xip_rodata
 static const GPIO_PinMuxParam g_pinmux_adc[] = {
-	{ GPIO_PORT_A, GPIO_PIN_10,  { GPIOA_P10_F2_ADC_CH0,  GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_11,  { GPIOA_P11_F2_ADC_CH1,  GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_12, { GPIOA_P12_F2_ADC_CH2, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_13, { GPIOA_P13_F2_ADC_CH3, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_14, { GPIOA_P14_F2_ADC_CH4, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_15, { GPIOA_P15_F2_ADC_CH5, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_16, { GPIOA_P16_F2_ADC_CH6, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_11,  { GPIOA_P11_F2_ADC_CH1,  GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_12, { GPIOA_P12_F2_ADC_CH2, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_13, { GPIOA_P13_F2_ADC_CH3, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_14, { GPIOA_P14_F2_ADC_CH4, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_15, { GPIOA_P15_F2_ADC_CH5, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_16, { GPIOA_P16_F2_ADC_CH6, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
 };
 
 __xip_rodata
@@ -172,7 +171,6 @@ __xip_rodata
 static const GPIO_PinMuxParam g_pinmux_pwm[] = {
 	{ GPIO_PORT_A, GPIO_PIN_8,  { GPIOA_P8_F3_PWM0_ECT0,  GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
 	{ GPIO_PORT_A, GPIO_PIN_9,  { GPIOA_P9_F3_PWM1_ECT1,  GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_10, { GPIOA_P10_F3_PWM2_ECT2, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
 	{ GPIO_PORT_A, GPIO_PIN_11, { GPIOA_P11_F3_PWM3_ECT3, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
 	{ GPIO_PORT_A, GPIO_PIN_12, { GPIOA_P12_F3_PWM4_ECT4, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
 	{ GPIO_PORT_A, GPIO_PIN_13, { GPIOA_P13_F3_PWM5_ECT5, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
@@ -187,11 +185,21 @@ static const GPIO_PinMuxParam g_pinmux_pwm[] = {
 #define BOARD_SD0_DET_PIN_MODE	GPIOx_Pn_F6_EINT
 #define BOARD_SD0_DET_DELAY    	500
 
+// __xip_rodata
+// static const GPIO_PinMuxParam g_pinmux_sd0[BOARD_SD0_DATA_BITS + 2] = {
+// 	{ GPIO_PORT_B, GPIO_PIN_16,  { GPIOB_P16_F3_SD_CMD,     GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* CMD */
+// 	{ GPIO_PORT_B, GPIO_PIN_18,  { GPIOB_P18_F3_SD_CLK,     GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* CLK */
+// 	{ GPIO_PORT_B, GPIO_PIN_17,  { GPIOB_P17_F3_SD_DATA0,   GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* D0 */
+// //	{ GPIO_PORT_A, GPIO_PIN_3,  { GPIOA_P3_F3_SD_DATA1,   GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* D1 */
+// //	{ GPIO_PORT_A, GPIO_PIN_4,  { GPIOA_P4_F3_SD_DATA2,   GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* D2 */
+// //	{ GPIO_PORT_A, GPIO_PIN_5,  { GPIOA_P5_F3_SD_DATA3,   GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* D3 */
+// };
+
 __xip_rodata
 static const GPIO_PinMuxParam g_pinmux_sd0[BOARD_SD0_DATA_BITS + 2] = {
-	{ GPIO_PORT_B, GPIO_PIN_16,  { GPIOB_P16_F3_SD_CMD,     GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* CMD */
-	{ GPIO_PORT_B, GPIO_PIN_18,  { GPIOB_P18_F3_SD_CLK,     GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* CLK */
-	{ GPIO_PORT_B, GPIO_PIN_17,  { GPIOB_P17_F3_SD_DATA0,   GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* D0 */
+	{ GPIO_PORT_A, GPIO_PIN_0,  { GPIOA_P0_F3_SD_CMD,     GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* CMD */
+	{ GPIO_PORT_A, GPIO_PIN_2,  { GPIOA_P2_F3_SD_CLK,     GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* CLK */
+	{ GPIO_PORT_A, GPIO_PIN_1,  { GPIOA_P1_F3_SD_DATA0,   GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* D0 */
 //	{ GPIO_PORT_A, GPIO_PIN_3,  { GPIOA_P3_F3_SD_DATA1,   GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* D1 */
 //	{ GPIO_PORT_A, GPIO_PIN_4,  { GPIOA_P4_F3_SD_DATA2,   GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* D2 */
 //	{ GPIO_PORT_A, GPIO_PIN_5,  { GPIOA_P5_F3_SD_DATA3,   GPIO_DRIVING_LEVEL_2, GPIO_PULL_UP } },	/* D3 */
@@ -214,48 +222,64 @@ static const HAL_SDCGPIOCfg g_sd0_cfg = {
 
 __xip_rodata
 static const GPIO_PinMuxParam g_pinmux_csi[] = {
-	{ GPIO_PORT_A, GPIO_PIN_0,  { GPIOA_P0_F5_CSI_D0,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_1,  { GPIOA_P1_F5_CSI_D1,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_2,  { GPIOA_P2_F5_CSI_D2,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_3,  { GPIOA_P3_F5_CSI_D3,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_4,  { GPIOA_P4_F5_CSI_D4,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_5,  { GPIOA_P5_F5_CSI_D5,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_6,  { GPIOA_P6_F5_CSI_D6,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_7,  { GPIOA_P7_F5_CSI_D7,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_8,  { GPIOA_P8_F5_CSI_PCLK,   GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_9,  { GPIOA_P9_F5_CSI_MCLK,   GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_10, { GPIOA_P10_F5_CSI_HSYNC, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
-	{ GPIO_PORT_A, GPIO_PIN_11, { GPIOA_P11_F5_CSI_VSYNC, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_0,  { GPIOA_P0_F5_CSI_D0,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_1,  { GPIOA_P1_F5_CSI_D1,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_2,  { GPIOA_P2_F5_CSI_D2,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_3,  { GPIOA_P3_F5_CSI_D3,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_4,  { GPIOA_P4_F5_CSI_D4,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_5,  { GPIOA_P5_F5_CSI_D5,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_6,  { GPIOA_P6_F5_CSI_D6,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_7,  { GPIOA_P7_F5_CSI_D7,     GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_8,  { GPIOA_P8_F5_CSI_PCLK,   GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_9,  { GPIOA_P9_F5_CSI_MCLK,   GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
+	// { GPIO_PORT_A, GPIO_PIN_11, { GPIOA_P11_F5_CSI_VSYNC, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE } },
 };
 
 /* do not set const */
 static ad_button g_ad_buttons[] = {
-	{.name = "play+pause",    .mask = KEY1, .channel = ADC_CHANNEL_6, .value = 704,  .debounce_time = 50},
-	{.name = "pre+vol_up",    .mask = KEY2, .channel = ADC_CHANNEL_6, .value = 1343, .debounce_time = 50},
-	{.name = "next+vol_down", .mask = KEY3, .channel = ADC_CHANNEL_6, .value = 1933, .debounce_time = 50},
-	{.name = "mode",          .mask = KEY4, .channel = ADC_CHANNEL_6, .value = 2572, .debounce_time = 50},
-	{.name = "ai",            .mask = KEY5, .channel = ADC_CHANNEL_6, .value = 3244, .debounce_time = 50},
-	{.name = "pre+next",      .mask = KEY2 | KEY3, .channel = ADC_CHANNEL_6, .value = 940,  .debounce_time = 50},
+	// {.name = "play+pause",    .mask = KEY1, .channel = ADC_CHANNEL_6, .value = 704,  .debounce_time = 50},
+	// {.name = "pre+vol_up",    .mask = KEY2, .channel = ADC_CHANNEL_6, .value = 1343, .debounce_time = 50},
+	// {.name = "next+vol_down", .mask = KEY3, .channel = ADC_CHANNEL_6, .value = 1933, .debounce_time = 50},
+	// {.name = "mode",          .mask = KEY4, .channel = ADC_CHANNEL_6, .value = 2572, .debounce_time = 50},
+	// // {.name = "ai",            .mask = KEY5, .channel = ADC_CHANNEL_6, .value = 3244, .debounce_time = 50},
+	// {.name = "pre+next",      .mask = KEY2 | KEY3, .channel = ADC_CHANNEL_6, .value = 940,  .debounce_time = 50},
 };
 
 __xip_rodata
 static const gpio_button g_gpio_buttons[] = {
+    {
+        .name = "ai",
+        .mask = KEY5,
+        .active_low = 1,
+        .gpio_param = {
+            GPIO_PORT_A,
+            GPIO_PIN_10,
+            {
+                GPIOx_Pn_F6_EINT,   // 配置为中断模式
+                GPIO_DRIVING_LEVEL_1,
+                GPIO_PULL_UP        // 上拉
+            }
+        },
+        .debounce_time = 50        // 消抖时间50ms
+    }
 };
+
+
 
 __xip_rodata
 static const matrix_button g_matrix_buttons_row[] = {
-	{.name = "row1", { GPIO_PORT_A, GPIO_PIN_0,	{ GPIOx_Pn_F1_OUTPUT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE }}, 0, 0, 0},
-	{.name = "row2", { GPIO_PORT_A, GPIO_PIN_1, { GPIOx_Pn_F1_OUTPUT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE }}, 0, 0, 0},
-	{.name = "row3", { GPIO_PORT_A, GPIO_PIN_2, { GPIOx_Pn_F1_OUTPUT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE }}, 0, 0, 0},
-	{.name = "row4", { GPIO_PORT_A, GPIO_PIN_3, { GPIOx_Pn_F1_OUTPUT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE }}, 0, 0, 0},
+	// {.name = "row1", { GPIO_PORT_A, GPIO_PIN_0,	{ GPIOx_Pn_F1_OUTPUT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE }}, 0, 0, 0},
+	// {.name = "row2", { GPIO_PORT_A, GPIO_PIN_1, { GPIOx_Pn_F1_OUTPUT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE }}, 0, 0, 0},
+	// {.name = "row3", { GPIO_PORT_A, GPIO_PIN_2, { GPIOx_Pn_F1_OUTPUT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE }}, 0, 0, 0},
+	// {.name = "row4", { GPIO_PORT_A, GPIO_PIN_3, { GPIOx_Pn_F1_OUTPUT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_NONE }}, 0, 0, 0},
 };
 
 __xip_rodata
 static const matrix_button g_matrix_buttons_col[] = {
-	{.name = "col1", { GPIO_PORT_A, GPIO_PIN_4, { GPIOx_Pn_F6_EINT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_DOWN }}, 1, WKUPIO_WK_MODE_RISING_EDGE, GPIO_PULL_DOWN},
-	{.name = "col2", { GPIO_PORT_A, GPIO_PIN_5, { GPIOx_Pn_F6_EINT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_DOWN }}, 1, WKUPIO_WK_MODE_RISING_EDGE, GPIO_PULL_DOWN},
-	{.name = "col3", { GPIO_PORT_A, GPIO_PIN_6, { GPIOx_Pn_F6_EINT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_DOWN }}, 1, WKUPIO_WK_MODE_RISING_EDGE, GPIO_PULL_DOWN},
-	{.name = "col4", { GPIO_PORT_A, GPIO_PIN_7, { GPIOx_Pn_F6_EINT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_DOWN }}, 1, WKUPIO_WK_MODE_RISING_EDGE, GPIO_PULL_DOWN},
+	// {.name = "col1", { GPIO_PORT_A, GPIO_PIN_4, { GPIOx_Pn_F6_EINT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_DOWN }}, 1, WKUPIO_WK_MODE_RISING_EDGE, GPIO_PULL_DOWN},
+	// {.name = "col2", { GPIO_PORT_A, GPIO_PIN_5, { GPIOx_Pn_F6_EINT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_DOWN }}, 1, WKUPIO_WK_MODE_RISING_EDGE, GPIO_PULL_DOWN},
+	// {.name = "col3", { GPIO_PORT_A, GPIO_PIN_6, { GPIOx_Pn_F6_EINT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_DOWN }}, 1, WKUPIO_WK_MODE_RISING_EDGE, GPIO_PULL_DOWN},
+	// {.name = "col4", { GPIO_PORT_A, GPIO_PIN_7, { GPIOx_Pn_F6_EINT, GPIO_DRIVING_LEVEL_1, GPIO_PULL_DOWN }}, 1, WKUPIO_WK_MODE_RISING_EDGE, GPIO_PULL_DOWN},
 };
 
 #define BOARD_PA_PORT           	GPIO_PORT_A

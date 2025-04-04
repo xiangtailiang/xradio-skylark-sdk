@@ -90,24 +90,24 @@ int audio_buttons_init(void)
 
 	/* create buttons object, after a long press of 50ms, buttons will trigger */
 	vol_up_button = create_long_button(KEY5, 50);
-	vol_down_button = create_long_button(KEY4, 50);
-	next_button = create_long_button(KEY3, 50);
-	prev_button = create_long_button(KEY2, 50);
-	pause_button = create_long_button(KEY1, 50);
+	// vol_down_button = create_long_button(KEY4, 50);
+	// next_button = create_long_button(KEY3, 50);
+	// prev_button = create_long_button(KEY2, 50);
+	// pause_button = create_long_button(KEY1, 50);
 
 	/* set buttons callback */
 	vol_up_button->cb = vol_up_button_cb;
-	vol_down_button->cb = vol_down_button_cb;
-	next_button->cb = next_button_cb;
-	prev_button->cb = prev_button_cb;
-	pause_button->cb = pause_button_cb;
+	// vol_down_button->cb = vol_down_button_cb;
+	// next_button->cb = next_button_cb;
+	// prev_button->cb = prev_button_cb;
+	// pause_button->cb = pause_button_cb;
 
 	/* start buttons object */
 	vol_up_button->start(vol_up_button);
-	vol_down_button->start(vol_down_button);
-	next_button->start(next_button);
-	prev_button->start(prev_button);
-	pause_button->start(pause_button);
+	// vol_down_button->start(vol_down_button);
+	// next_button->start(next_button);
+	// prev_button->start(prev_button);
+	// pause_button->start(pause_button);
 
 	return ret;
 }

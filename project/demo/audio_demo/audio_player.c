@@ -190,7 +190,7 @@ static PLAYER_CMD player_get_ctrl_cmd()
 static void player_task(void *arg)
 {
     int ret;
-    int volume = 8;
+    int volume = 12;
     char read_songs_buf[255];
     PLAYER_STATUS pause_ctrl = PLAYER_PLAYING;
 
@@ -258,7 +258,7 @@ int player_task_init()
                         "player_task",
                         player_task,
                         NULL,
-                        OS_THREAD_PRIO_APP,
+                        OS_THREAD_PRIO_APP ,
                         PLAYER_THREAD_STACK_SIZE) != OS_OK) {
         AUDIO_LOGE("thread create error\n");
         return -1;
